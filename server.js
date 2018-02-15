@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 
 
+var port = process.env.PORT || 8080;
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -16,5 +17,5 @@ app.get('/',function(req,res){
   res.sendFile('site/index.html' , { root : __dirname});
 })
 
-app.listen(8080);
-console.log('Server running on port 8080...')
+app.listen(port);
+console.log('Server running on port '+port)
